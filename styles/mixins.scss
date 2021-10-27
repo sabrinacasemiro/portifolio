@@ -1,0 +1,23 @@
+@mixin flexColumn($alignItems: center, $justifyContent: center, $flexDirection: column) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+@mixin flex($alignItems: center, $justifyContent: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin languagesProjects {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+@function calculadora-rem($size){
+    $tamanho: $size/16;
+    @return $tamanho + rem;
+}

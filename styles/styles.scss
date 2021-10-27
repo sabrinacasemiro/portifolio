@@ -1,0 +1,277 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+body{
+    font-family: $inter;
+    background-color:$black-color;
+    color: $font-color;
+    width: 100vw;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar{
+        background-color: $font-color;
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: $main-color;
+        border-radius: 5px;
+    }
+}
+
+.header{
+    height: 100px;
+    width: 100%;
+    @include flex;
+    justify-content: flex-end;
+    font-size: calculadora-rem(25);
+    font-weight: 500;
+    position: fixed;
+    background-color: $black-color;
+    z-index: 2;
+    
+    &--menu{
+        margin-right: 50px;
+        text-decoration: none;
+        color: $font-color;
+
+        &:hover{
+            color: $main-color;
+        }
+    }
+
+    &--contact{
+        background-color: $main-color;
+        font-size: calculadora-rem(15);
+        height: 40px;
+        width: 100px;
+        border-radius: 50px;
+        @include flex;
+        margin-left: 50px;
+        transition-duration: 500ms;
+        border: 1px solid $main-color;
+
+
+        &:hover{
+            background-color: $black-color;
+            color: $main-color;
+        }
+    }
+}
+
+.main{
+    @include flex;
+    padding: 50px;
+    box-sizing: border-box;
+
+    &--container1{
+        @include flex;
+        width: 100%;
+        justify-content: space-between;
+        height: 400px;
+        margin-top: 80px;
+
+        &--about{
+            @include flexColumn(flex-start);
+            width: 50%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+
+            &--occupation{
+                @include flex;
+                font-size: calculadora-rem(22);
+                margin-bottom: 50px;
+                border-left: 3px solid $main-color;
+                padding-left: 10px;
+
+                &--bars{
+                    color: $main-color;
+                    font-weight: 500;
+                    margin-right: 15px;
+                }
+            }
+
+            &--title{
+                color: $main-color;
+                font-size: calculadora-rem(30);
+                margin-bottom: 30px;
+            }
+
+            &--border-top{
+                border-top: 2px solid $main-color;
+                border-left: 2px solid $main-color;
+                height: 40px;
+                width: 100px;
+                border-radius: 10px 0;
+            }
+
+            &--welcome{
+                width: 50%;
+                font-size: calculadora-rem(18);
+                z-index: 1;
+                transform: translateX(15px) translateY(-28px);
+                line-height: 20px;
+                background-color: $black-color;
+            }
+
+            &--border-bottom{
+                border-right: 2px solid $main-color;
+                border-bottom: 2px solid $main-color;
+                height: 40px;
+                width: 100px;
+                border-radius: 10px 0;
+                transform: translateX(360px) translateY(-55px);
+            }
+
+            &--cv-gh{
+                @include flex;
+                
+                &--all{
+                    height: 50px;
+                width: 150px;
+                background-color: $main-color;
+                @include flex;
+                text-decoration: none;
+                color: $font-color;
+                font-weight: 600;
+                border-radius: 50px;
+                border: 1px solid $main-color;
+                transition-duration: 500ms;
+                margin: 0 150px 0 0;
+
+                &:hover{
+                    color: $main-color;
+                    background-color: $black-color;
+                }
+                }
+            }
+        }
+
+        &--languages{
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            @include flex;
+            flex-wrap: wrap;
+
+            &--wrapper{
+                @include flexColumn;
+                margin: 0 70px;
+
+                &--language{
+                    font-size: calculadora-rem(30);
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.container-projects{
+    width: 80%;
+    padding: 50px;
+    @include flex;
+    flex-wrap: wrap;
+
+    &--list{
+        @include flex;
+        width: 100%;
+
+        &--project{
+            width: 400px;
+            @include flexColumn;
+            border: 2px solid $main-color;
+            border-radius: 25px 5px 25px 5px;
+            padding: 50px 0;
+            &--languages{
+                height: 50px;
+                width: 90%;
+                @include flex(center, flex-start);
+                margin-bottom: 20px;
+
+                &--html{
+                    @include languagesProjects;
+                    background-color: $html-color;
+                    margin-right: 20px
+                }
+
+                &--css{
+                    @include languagesProjects;
+                    background-color: $css-color;
+                }
+            }
+
+            &--img{
+                width: 90%;
+                margin-bottom: 20px;
+                border-radius: 15px;
+            }
+
+            &--title{
+                font-size: calculadora-rem(23);
+                margin-bottom: 10px;
+            }
+
+            &--description{
+                font-size: calculadora-rem(18);
+                margin-bottom: 50px;
+            }
+
+            &--links{
+                height: 50px;
+                width: 90%;
+                background-color: $gray-color;
+                @include flex;
+                font-size: calculadora-rem(40);
+                border-radius: 5px;
+
+                &--all{
+                    color: $main-color;
+                    text-decoration: none;
+                    
+                }
+
+                &--github{
+                    border-right: 3px solid $main-color;
+                    width: 30%;
+                }
+
+                &--pages{
+                    margin-left: 65px;
+                }
+            }
+        }
+    }
+}
+
+.fa-html5{
+    color: $html-color;
+    font-size: calculadora-rem(100);
+    margin-bottom: 15px;
+}
+
+.fa-sass{
+    color: $sass-color;
+    font-size: calculadora-rem(100);
+    margin-bottom: 15px;
+}
+
+.fa-js{
+    color: $js-color;
+    font-size: calculadora-rem(100);
+    margin-bottom: 15px;
+}
+
+.fa-react{
+    color: $react-color;
+    font-size: calculadora-rem(100);
+    margin-bottom: 15px;
+}
+
+.fa-css3-alt{
+    color: $css-color;
+    font-size: calculadora-rem(100);
+    margin-bottom: 15px;
+}
