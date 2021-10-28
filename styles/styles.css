@@ -185,7 +185,7 @@ body::-webkit-scrollbar-thumb {
           transform: translateX(360px) translateY(-55px);
 }
 
-.main--container1--about--cv-gh {
+.main--container1--about--github {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,21 +195,12 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.main--container1--about--cv-gh--all {
   height: 50px;
   width: 150px;
   background-color: #be2378;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: #e7dde0;
   font-weight: 600;
@@ -220,7 +211,7 @@ body::-webkit-scrollbar-thumb {
   margin: 0 150px 0 0;
 }
 
-.main--container1--about--cv-gh--all:hover {
+.main--container1--about--github:hover {
   color: #be2378;
   background-color: #060608;
 }
@@ -293,16 +284,20 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 50px 0 50px 120px;
 }
 
 .container-projects--list--project {
   width: 400px;
+  height: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -312,7 +307,10 @@ body::-webkit-scrollbar-thumb {
           flex-direction: column;
   border: 2px solid #be2378;
   border-radius: 25px 5px 25px 5px;
-  padding: 50px 0;
+  margin: 20px 35px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .container-projects--list--project--languages {
@@ -334,31 +332,60 @@ body::-webkit-scrollbar-thumb {
   width: 30px;
   height: 30px;
   border-radius: 30px;
-  background-color: #e34f26;
   margin-right: 20px;
+  background-color: #e34f26;
 }
 
 .container-projects--list--project--languages--css {
   width: 30px;
   height: 30px;
   border-radius: 30px;
+  margin-right: 20px;
   background-color: #264de4;
 }
 
+.container-projects--list--project--languages--js {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-right: 20px;
+  background-color: #f0db4f;
+}
+
+.container-projects--list--project--languages--scss {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-right: 20px;
+  background-color: #cc6699;
+}
+
+.container-projects--list--project--languages--react {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-right: 20px;
+  background-color: #7cc5d9;
+}
+
 .container-projects--list--project--img {
-  width: 90%;
-  margin-bottom: 20px;
+  width: 100%;
+  max-height: 185px;
+  margin-bottom: 40px;
   border-radius: 15px;
 }
 
 .container-projects--list--project--title {
   font-size: 1.4375rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .container-projects--list--project--description {
   font-size: 1.125rem;
   margin-bottom: 50px;
+  width: 90%;
+  line-height: 25px;
+  text-align: justify;
 }
 
 .container-projects--list--project--links {
@@ -381,15 +408,17 @@ body::-webkit-scrollbar-thumb {
 .container-projects--list--project--links--all {
   color: #be2378;
   text-decoration: none;
-}
-
-.container-projects--list--project--links--github {
-  border-right: 3px solid #be2378;
-  width: 30%;
-}
-
-.container-projects--list--project--links--pages {
-  margin-left: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  cursor: auto;
 }
 
 .fa-html5 {
@@ -420,5 +449,13 @@ body::-webkit-scrollbar-thumb {
   color: #264de4;
   font-size: 6.25rem;
   margin-bottom: 15px;
+}
+
+.fa-github {
+  cursor: pointer;
+}
+
+.fa-eye {
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */
