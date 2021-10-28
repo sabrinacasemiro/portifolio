@@ -19,6 +19,29 @@ body{
     }
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+.button-to-top{
+    height: 50px;
+    width: 50px;
+    background-color: $main-color-opacity;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 50px;
+    @include flex;
+    cursor: pointer;
+    font-size: calculadora-rem(23);
+    color: $black-color;
+    transition-duration: 500ms;
+
+    &:hover{
+        background-color: $main-color;
+    }
+}
+
 .header{
     height: 100px;
     width: 100%;
@@ -29,11 +52,15 @@ body{
     position: fixed;
     background-color: $black-color;
     z-index: 2;
+    top: 0;
     
     &--menu{
         margin-right: 50px;
         text-decoration: none;
         color: $font-color;
+        cursor: pointer;
+        transition-duration: 300ms;
+
 
         &:hover{
             color: $main-color;
@@ -59,10 +86,11 @@ body{
     }
 }
 
-.main{
+.main-welcome{
     @include flex;
     padding: 50px;
     box-sizing: border-box;
+    margin: 200px 0;
 
     &--container1{
         @include flex;
@@ -80,10 +108,7 @@ body{
 
             &--occupation{
                 @include flex;
-                font-size: calculadora-rem(22);
-                margin-bottom: 50px;
-                border-left: 3px solid $main-color;
-                padding-left: 10px;
+                @include titles;
 
                 &--bars{
                     color: $main-color;
@@ -171,11 +196,16 @@ body{
 .container-projects{
     width: 80%;
     padding: 50px;
-    @include flex;
+    @include flex(center, flex-start);
     flex-wrap: wrap;
 
+    &--title{
+        @include titles;
+        margin-top: 50px
+    }
+
     &--list{
-        @include flex;
+        @include flex();
         width: 100%;
         flex-wrap: wrap;
         padding: 50px 0 50px 120px;
@@ -262,6 +292,89 @@ body{
     }
 }
 
+.container-aboutme{
+    width: 100%;
+    height: 100vh;
+    @include flexColumn(flex-start, center);
+    padding: 0 50px;
+    box-sizing: border-box;
+    
+    &--title{
+        color: $font-color;
+        font-size: calculadora-rem(30);
+        margin-bottom: 100px;
+        border-left: 3px solid $main-color;
+        padding-left: 15px;
+    }
+
+    &--wrapper{
+        width: 50%;
+        border: 2px solid $main-color-opacity;
+        border-bottom: 50px solid $main-color;
+        border-radius: 5px 5px 20px 20px;
+        @include flexColumn(flex-start, center);
+        flex-wrap: wrap;
+        padding: 30px 100px 30px 30px;
+        box-sizing: border-box;
+        line-height: 25px;
+        margin-left: 450px;
+
+        &--title{
+            font-size: calculadora-rem(25);
+            color: $main-color;
+            margin-bottom: 40px;
+        }
+
+        &--text{
+            text-indent: 20px;
+        }
+
+        &--final{
+            margin-bottom: 50px;
+        }
+    }
+    
+}
+
+.footer{
+    width: 90%;
+    @include flex(center, flex-start);
+    border-top: 3px solid $main-color;
+    padding: 20px 50px;
+    margin: 0 50px;
+    font-size: calculadora-rem(18);
+
+    &--information{
+        width: 40%;
+
+        &--title{
+            font-size: calculadora-rem(23);
+            margin-bottom: 40px;
+            color: $main-color;
+        }
+
+        &--wrapper{
+            width: 50%;
+            @include flex(center, flex-start);
+            margin-bottom: 10px;
+
+            &--text{
+                margin-left: 20px;
+            }
+        }
+
+        &--profiles{
+            @include flex(center, space-between);
+            width: 10%;
+            
+            &--icons{
+                color: $main-color;
+                font-size: calculadora-rem(50);
+            }
+        }
+    }
+}
+
 .fa-html5{
     color: $html-color;
     font-size: calculadora-rem(100);
@@ -298,4 +411,16 @@ body{
 
 .fa-eye{
     cursor: pointer;
+}
+
+.fa-whatsapp{
+    color: $main-color;
+}
+
+.fa-at{
+    color: $main-color;
+}
+
+.fa-map-marker-alt{
+    color: $main-color;
 }

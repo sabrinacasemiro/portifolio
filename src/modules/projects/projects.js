@@ -5,7 +5,6 @@ const projects = () => {
   const $ul = document.querySelector(".container-projects--list");
 
   projectsList.forEach((project) => {
-    console.log(project);
     const _container = Element({
       type: "li",
       classList: ["container-projects--list--project"],

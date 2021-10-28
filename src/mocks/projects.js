@@ -107,7 +107,7 @@ const projectsList = [
       },
       {
         url: '',
-        icon: ['far', 'fa-eye'],
+        icon: ["far", "fa-eye-slash"],
       },
     ],
   },
@@ -203,7 +203,7 @@ const projectsList = [
       },
       {
         url: '',
-        icon: ['far', 'fa-eye'],
+        icon: ["far", "fa-eye-slash"],
       },
     ],
   },
